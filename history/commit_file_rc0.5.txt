@@ -1,0 +1,12 @@
+RELEASE CANDIDATE rc0.5
+
+Entering 'submodule01'
+_____________________________________________________
+a31bb9b some extra new code 5
+
+
+Entering 'submodule02'
+_____________________________________________________
+e9a044a some extra new code 5
+
+
