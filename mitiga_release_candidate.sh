@@ -72,7 +72,7 @@ git merge rcandidate --no-commit
 
 # Create new commit file using subrepos changes for the new version.
 echo "Create a new file for commit message"
-echo -e "RELEASE CANDIDATE $rc_tag\n" > history/$rc_commit_file && git submodule foreach "echo '_____________________________________________________' && git log --oneline $rc_last_tag..$rc_tag && echo '\n'" >> history/$rc_commit_file
+echo -e "RELEASE CANDIDATE $rc_tag\n" > history/$rc_commit_file && git submodule foreach "echo '-----------------------------------------------------' && git log --oneline $rc_last_tag..$rc_tag && echo '\n\n'" >> history/$rc_commit_file
 # echo -e "RELEASE CANDIDATE $rc_tag\n" > history/$rc_commit_file && git submodule foreach \"git log --oneline $rc_last_tag..$rc_tag && echo '----------------------------------------------------------------------------------------'\" >> history/$rc_commit_file
 
 # Commit new release version including new release commit file (and tag it)
