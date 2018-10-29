@@ -3,6 +3,14 @@
 
 
 hotfix_tag=$1
+
+if [[ $hotfix_tag =~ rc[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3} ]]; then
+    echo "Execution release candidate script for tag $rc_tag"
+else
+    echo "Tag should follow the regex: rc[0-9]{1,3}\\.[0-9]{1,3}"
+    exit 1
+fi
+
 run_dir=$PWD
 hotfix_file="hotfix_$hotfix_tag.txt"
 
@@ -47,6 +55,8 @@ do
         git merge $hotfix_branch --no-commit
         git commit --file=$hotfix_file --allow-empty
         git checkout rcandidate
+        git push --all
+        git push --tags
     else
         echo "The current branch: $hotfix_branch does not seems to be a hotfix branch"
     fi
@@ -66,3 +76,5 @@ done
 
 git commit --file=history/$hotfix_file
 git tag $hotfix_tag
+git push --all
+git push --tags

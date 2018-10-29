@@ -1,0 +1,22 @@
+RELEASE CANDIDATE rc0.10
+
+Entering 'submodule01'
+-----------------------------------------------------
+66427e8 HOTFIX [rc0.9.1][submodule01#<issue_number>]: brief description of the hotfix being solved.
+69f0528 hotfix commit 7
+e3a0511 RELEASE CANDIDATE rc0.9
+27fdd92 HOTFIX [rc0.8.6][submodule01/#<issue_number>]: brief description of the hotfix being solved.
+
+
+
+Entering 'submodule02'
+-----------------------------------------------------
+6116dc9 HOTFIX [rc0.9.1][submodule02#<issue_number>]: brief description of the hotfix being solved.
+0ad6801 HOTFIX [submodule01][submodule02#<issue_number>]: brief description of the hotfix being solved.
+23ccfe5 hotfix commit 7 submodule2
+8b95507 hotfix commit 7 submodule2
+417c6c7 RELEASE CANDIDATE rc0.9
+5fb926e doble pesao HEADER TEST
+
+
+

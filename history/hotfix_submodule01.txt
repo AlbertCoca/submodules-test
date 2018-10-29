@@ -1,0 +1,3 @@
+HOTFIX LOG AT TAG: submodule01
+
+HOTFIX [submodule01][submodule02#<issue_number>]: brief description of the hotfix being solved.
