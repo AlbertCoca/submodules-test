@@ -1,0 +1,3 @@
+HOTFIX LOG AT TAG: rc0.8.6
+
+HOTFIX [rc0.8.6][submodule01/#<issue_number>]: brief description of the hotfix being solved.

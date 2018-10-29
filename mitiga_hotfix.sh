@@ -4,6 +4,7 @@
 
 hotfix_tag=$1
 run_dir=$PWD
+hotfix_file="hotfix_$hotfix_tag.txt"
 
 shift
 
@@ -26,13 +27,11 @@ do
     
     if [[ $hotfix_branch == *"hotfix"* ]]; then
     
-        hotfix_file="hotfix_$hotfix.txt"
-       
         # Merge hotfix to rcandidate 
         git checkout rcandidate
         git merge $hotfix_branch --no-commit
         
-        echo "HEADER TEST" > $hotfix_file
+        echo -e "HOTFIX [$hotfix_tag][$repo#<issue_number>]: brief description of the hotfix being solved.\n" > $hotfix_file
         
         if [ -z $EDITOR ]; then 
             vim $hotfix_file
@@ -51,5 +50,19 @@ do
     else
         echo "The current branch: $hotfix_branch does not seems to be a hotfix branch"
     fi
-
 done
+
+cd $run_dir
+git checkout rcandidate
+
+echo -e "HOTFIX LOG AT TAG: $hotfix_tag\n">> history/$hotfix_file
+
+for repo in "$@"
+do
+    head -n1 $repo/$hotfix_file >> history/$hotfix_file
+    git add $repo 
+    rm $repo/$hotfix_file
+done
+
+git commit --file=history/$hotfix_file
+git tag $hotfix_tag
