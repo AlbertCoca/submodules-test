@@ -47,6 +47,7 @@ do
         git checkout develop
         git merge $hotfix_branch --no-commit
         git commit --file=$hotfix_file --allow-empty
+        git checkout rcandidate
     else
         echo "The current branch: $hotfix_branch does not seems to be a hotfix branch"
     fi
