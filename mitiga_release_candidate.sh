@@ -44,7 +44,7 @@ git submodule foreach git push origin --tags
 echo "Checkout rcandidate"
 git submodule foreach git checkout rcandidate
 echo "Merge develop into rcandidate"
-git submodule foreach git merge develop --squash --no-commit
+git submodule foreach git merge develop --no-ff --no-commit
 echo "Commit with message from file"
 git submodule foreach "echo 'RELEASE CANDIDATE $rc_tag\n' > $rc_commit_file && git log --oneline $rc_last_tag..$rc_tag >> $rc_commit_file && git commit --all --file=$rc_commit_file --allow-empty"
 

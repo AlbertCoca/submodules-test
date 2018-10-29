@@ -1,0 +1,12 @@
+RELEASE CANDIDATE rc0.6
+
+Entering 'submodule01'
+_____________________________________________________
+f157015 some extra new code 6
+
+
+Entering 'submodule02'
+_____________________________________________________
+c732fb1 some extra new code 6
+
+
