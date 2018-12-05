@@ -1,0 +1,4 @@
+HOTFIX LOG AT TAG: rc0.9.1
+
+HOTFIX [rc0.9.1][submodule01#<issue_number>]: brief description of the hotfix being solved.
+HOTFIX [rc0.9.1][submodule02#<issue_number>]: brief description of the hotfix being solved.

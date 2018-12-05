@@ -1,0 +1,1 @@
+HOTFIX [rc0.8.5][submodule01#<issue_number>]: brief description of the hotfix being solved.\n

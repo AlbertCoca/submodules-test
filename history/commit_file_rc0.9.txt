@@ -1,0 +1,48 @@
+RELEASE CANDIDATE rc0.9
+
+Entering 'submodule01'
+-----------------------------------------------------
+90255fc HOTFIX [rc0.8.6][submodule01/#<issue_number>]: brief description of the hotfix being solved.
+7c61491 hotfix commit 6
+52408ee HOTFIX [rc0.8.5][submodule01#<issue_number>]: brief description of the hotfix being solved.\n
+4938f6a HOTFIX [rc0.8.5][submodule01#<issue_number>]: brief description of the hotfix being solved.\n
+0d6795d hotfix commit 5
+6785731 pesao HEADER TEST
+2aa9d87 pesao HEADER TEST
+8e5f251 hotfix commit 4
+1719101 asasdas
+ccc8bcc asasdas
+89848ad hotfix commit 3
+20018e7 2222 HEADER TEST
+5ef9bb3 2222 HEADER TEST
+30e37fa hotfix commit 2
+52b53de holaaa HEADER TEST
+c074468 holaaa HEADER TEST
+dc9207d hotfix commit 1
+5096ac3 hotfix commit 1
+5db0900 RELEASE CANDIDATE rc0.8
+8657fea RELEASE CANDIDATE rc0.7
+e0a3ef2 RELEASE CANDIDATE rc0.6
+7640136 RELEASE CANDIDATE rc0.5
+3fde06c RELEASE CANDIDATE rc0.4
+fc190c3 RELEASE CANDIDATE rc0.3
+ccf4305 RELEASE CANDIDATE rc0.2
+f7cbc14 Merge branch 'develop' into rcandidate
+63b0b79 RELEASE CANDIDATE rc0.2
+
+
+
+Entering 'submodule02'
+-----------------------------------------------------
+7dd9bc6 doble pesao HEADER TEST
+8aea7c0 hotfix commit 4 submodule02
+b91f289 RELEASE CANDIDATE rc0.8
+1d786c2 RELEASE CANDIDATE rc0.7
+a7b688e RELEASE CANDIDATE rc0.6
+b631661 RELEASE CANDIDATE rc0.5
+46bba61 RELEASE CANDIDATE rc0.4
+505ca99 RELEASE CANDIDATE rc0.3
+48ff1e4 RELEASE CANDIDATE rc0.2
+
+
+

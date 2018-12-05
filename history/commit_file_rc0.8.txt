@@ -1,0 +1,14 @@
+RELEASE CANDIDATE rc0.8
+
+Entering 'submodule01'
+-----------------------------------------------------
+c3af60c some extra new code 8
+
+
+
+Entering 'submodule02'
+-----------------------------------------------------
+95614bc some extra new code 8
+
+
+

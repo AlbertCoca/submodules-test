@@ -1,0 +1,84 @@
+RELEASE r0.3
+
+Entering 'submodule01'
+-----------------------------------------------------
+423561b HOTFIX [rc0.10.1][submodule01#<issue_number>]: brief description of the hotfix being solved.
+bc858b8 hotfix commit 8
+d9bd10d RELEASE CANDIDATE rc0.10
+8ac4e9a HOTFIX [rc0.9.1][submodule01#<issue_number>]: brief description of the hotfix being solved.
+66427e8 HOTFIX [rc0.9.1][submodule01#<issue_number>]: brief description of the hotfix being solved.
+69f0528 hotfix commit 7
+e3a0511 RELEASE CANDIDATE rc0.9
+90255fc HOTFIX [rc0.8.6][submodule01/#<issue_number>]: brief description of the hotfix being solved.
+27fdd92 HOTFIX [rc0.8.6][submodule01/#<issue_number>]: brief description of the hotfix being solved.
+7c61491 hotfix commit 6
+52408ee HOTFIX [rc0.8.5][submodule01#<issue_number>]: brief description of the hotfix being solved.\n
+4938f6a HOTFIX [rc0.8.5][submodule01#<issue_number>]: brief description of the hotfix being solved.\n
+0d6795d hotfix commit 5
+6785731 pesao HEADER TEST
+2aa9d87 pesao HEADER TEST
+8e5f251 hotfix commit 4
+1719101 asasdas
+ccc8bcc asasdas
+89848ad hotfix commit 3
+20018e7 2222 HEADER TEST
+5ef9bb3 2222 HEADER TEST
+30e37fa hotfix commit 2
+52b53de holaaa HEADER TEST
+c074468 holaaa HEADER TEST
+dc9207d hotfix commit 1
+5096ac3 hotfix commit 1
+5db0900 RELEASE CANDIDATE rc0.8
+c3af60c some extra new code 8
+8657fea RELEASE CANDIDATE rc0.7
+e0a3ef2 RELEASE CANDIDATE rc0.6
+f157015 some extra new code 6
+7640136 RELEASE CANDIDATE rc0.5
+a31bb9b some extra new code 5
+3fde06c RELEASE CANDIDATE rc0.4
+055cb61 some extra new code 4
+fc190c3 RELEASE CANDIDATE rc0.3
+56b9e1b some extra new code 3
+ccf4305 RELEASE CANDIDATE rc0.2
+a98b6bc some extra new code 2
+e476705 some extra new code 1
+f7cbc14 Merge branch 'develop' into rcandidate
+63b0b79 RELEASE CANDIDATE rc0.2
+90407ab some extra new code
+71f3e84 some new code
+
+
+
+Entering 'submodule02'
+-----------------------------------------------------
+3ec423e HOTFIX [rc0.10.1][submodule02#<issue_number>]: brief description of the hotfix being solved.
+9f7b005 hotfix commit 8 s2
+fd9d00a RELEASE CANDIDATE rc0.10
+36ec207 HOTFIX [rc0.9.1][submodule02#<issue_number>]: brief description of the hotfix being solved.
+6116dc9 HOTFIX [rc0.9.1][submodule02#<issue_number>]: brief description of the hotfix being solved.
+0ad6801 HOTFIX [submodule01][submodule02#<issue_number>]: brief description of the hotfix being solved.
+23ccfe5 hotfix commit 7 submodule2
+8b95507 hotfix commit 7 submodule2
+417c6c7 RELEASE CANDIDATE rc0.9
+7dd9bc6 doble pesao HEADER TEST
+5fb926e doble pesao HEADER TEST
+8aea7c0 hotfix commit 4 submodule02
+b91f289 RELEASE CANDIDATE rc0.8
+95614bc some extra new code 8
+1d786c2 RELEASE CANDIDATE rc0.7
+a7b688e RELEASE CANDIDATE rc0.6
+c732fb1 some extra new code 6
+b631661 RELEASE CANDIDATE rc0.5
+e9a044a some extra new code 5
+46bba61 RELEASE CANDIDATE rc0.4
+c44f8de some extra new code 4
+505ca99 RELEASE CANDIDATE rc0.3
+6537b56 some extra new code 3
+48ff1e4 RELEASE CANDIDATE rc0.2
+75b88b5 some extra new code 2
+e88cb96 some extra new code 1
+77a5c57 some extra new code
+10ba26d some new code
+
+
+

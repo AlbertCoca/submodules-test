@@ -1,0 +1,101 @@
+#!/bin/bash
+
+# Script to perform release  
+# Create script variables
+r_tag=$1  # Relese tag name as <rx.y>
+r_last_tag=$2
+r_commit_file="commit_file_$r_tag.txt"  # File containing the changes of the release 
+
+if [[ $r_tag =~ r[0-9]{1,3}\.[0-9]{1,3} ]]; then
+    echo "Execution release  script for tag $r_tag"
+else
+    echo "Tag should follow the regex: r[0-9]{1,3}\\.[0-9]{1,3}"
+    exit 1
+fi
+if [[ $r_last_tag =~ r[0-9]{1,3}\.[0-9]{1,3} ]]; then
+    echo "Execution release  script for tag $r_last_tag"
+else
+    echo "Tag should follow the regex: r[0-9]{1,3}\\.[0-9]{1,3}"
+    exit 1
+fi
+
+###########################
+# For all subrepositories #
+###########################
+
+# Integrate all previous release hotfixes to rcandidate branch
+echo "Checkout rcandidate"
+git submodule foreach git checkout rcandidate
+echo "Pull rcandidate"
+git submodule foreach --recursive git pull origin rcandidate
+# git submodule foreach git merge master --no-commit
+# git submodule foreach git commit -m "Merge master $r_tag into rcandidate" --allow-empty
+
+# Tag it as new release 
+echo "Add tag $r_tag for each submodule at rcandidate"
+git submodule foreach git tag $r_tag
+git submodule foreach git push origin --tags
+
+# Change to release candidate branch and merge rcandidate new features to it
+# Use squash option to generate a unique new commit and use as commit message
+# a file that is a compedium of the new features/fixes onliners logs.
+echo "Checkout master"
+git submodule foreach git checkout master
+echo "Merge rcandidate into master"
+git submodule foreach git merge rcandidate --no-ff --no-commit
+echo "Commit with message from file"
+git submodule foreach "echo 'RELEASE $r_tag\n' > $r_commit_file && git log --oneline $r_last_tag..$r_tag >> $r_commit_file && git commit --all --file=$r_commit_file --allow-empty"
+
+# Tag this new master version with a 0 (clean candidate at the time being)
+# Push all changes (new tags and commits) discarting release commit file
+echo "Add tag $r_tag.0 for each submodule at master"
+git submodule foreach git tag $r_tag.0
+echo "Push all"
+git submodule foreach git push origin master
+echo "Push tags"
+git submodule foreach git push origin --tags
+echo "Delete temporaly files"
+git submodule foreach rm $r_commit_file
+
+
+#########################
+# For Mitiga repository #
+#########################
+
+# Integrate previous version hotfixes to rcandidate
+echo "Checkout rcandidate"
+git checkout rcandidate
+echo "merge master to rcandidate"
+git merge master --no-ff --no-commit 
+
+# Create new commit file using subrepos changes for the new version.
+echo "Create a new file for commit message"
+echo -e "RELEASE $r_tag\n" > history/$r_commit_file && git submodule foreach "echo '-----------------------------------------------------' && git log --oneline $r_last_tag..$r_tag && echo '\n\n'" >> history/$r_commit_file
+# echo -e "RELEASE CANDIDATE $r_tag\n" > history/$r_commit_file && git submodule foreach \"git log --oneline $r_last_tag..$r_tag && echo '----------------------------------------------------------------------------------------'\" >> history/$r_commit_file
+
+# Commit new release version including new release commit file (and tag it)
+echo "Add commit file $r_commit_file"
+git add history/$r_commit_file
+echo "Add all"
+git add -A
+echo "Commit with message $r_commit_file"
+git commit --file=history/$r_commit_file --allow-empty
+echo "Create tag $r_tag"
+git tag $r_tag
+
+# Go to master, rebase rcandidate changes and tag it as .0 (clean candidate)
+echo "Checkout master"
+git checkout master 
+echo "Rebase rcandidate master"
+git merge rcandidate master --no-ff --no-commit
+git commit --file=history/$r_commit_file --allow-empty
+echo "Add tag $r_tag.0 at master"
+git tag $r_tag.0
+
+# Push it all!!
+echo "Push tags"
+git push --tags
+echo "Push all"
+git push --all
+echo "Release  $r_tag done!! :D"
+
