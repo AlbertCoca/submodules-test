@@ -1,0 +1,9 @@
+history
+kk
+kk.txt
+mitiga_hotfix.sh
+mitiga_release_candidate.sh
+mitiga_release.sh.bak
+README.md
+submodule01
+submodule02
